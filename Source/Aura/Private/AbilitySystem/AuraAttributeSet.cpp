@@ -9,8 +9,6 @@
 
 UAuraAttributeSet::UAuraAttributeSet()
 {
-	//InitHealth(50.f);
-	//InitMana(10.f);
 	const FAuraGameplayTags& GameplayTags = FAuraGameplayTags::Get();
 
 	/* Primary Attributes */
@@ -122,6 +120,7 @@ void UAuraAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallba
 	if (Data.EvaluatedData.Attribute == GetHealthAttribute())
 	{
 		SetHealth(FMath::Clamp(GetHealth(), 0.f, GetMaxHealth()));
+		UE_LOG(LogTemp, Warning, TEXT("%s, %f"), *Props.TargetAvatarActor->GetName(), GetHealth());
 	}
 	if (Data.EvaluatedData.Attribute == GetManaAttribute())
 	{
