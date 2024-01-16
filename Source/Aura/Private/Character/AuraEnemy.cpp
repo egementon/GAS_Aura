@@ -56,8 +56,8 @@ void AAuraEnemy::BeginPlay()
 	Super::BeginPlay();
 	GetCharacterMovement()->MaxWalkSpeed = BaseWalkSpeed;
 	InitAbilityActorInfo();
-	UAuraAbilitySystemLibrary::GiveStartupAbilities(this, AbilitySystemComponent);
-
+	UAuraAbilitySystemLibrary::GiveStartupAbilities(this, AbilitySystemComponent);	
+	
 	if (UAuraUserWidget* AuraUserWidget = Cast<UAuraUserWidget>(HealthBar->GetUserWidgetObject()))
 	{
 		AuraUserWidget->SetWidgetController(this);
@@ -98,8 +98,8 @@ void AAuraEnemy::InitAbilityActorInfo()
 {
 	AbilitySystemComponent->InitAbilityActorInfo(this, this);
 	Cast<UAuraAbilitySystemComponent>(AbilitySystemComponent)->AbilityActorInfoSet();
-
-	InitializeDefaultAttributes();
+	
+	InitializeDefaultAttributes();		
 }
 
 void AAuraEnemy::InitializeDefaultAttributes() const
