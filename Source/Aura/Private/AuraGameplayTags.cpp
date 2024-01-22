@@ -126,6 +126,10 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 	 * Damage Types
 	*/
 
+	GameplayTags.Damage_Fire = UGameplayTagsManager::Get().AddNativeGameplayTag(
+		FName("Damage.Fire"),
+		FString("Fire Damage Type")
+		);
 	GameplayTags.Damage_Lightning = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Damage.Lightning"),
 		FString("Lightning Damage Type")
